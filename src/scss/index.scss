@@ -9,7 +9,13 @@ body {
 	background-color: $light002;
 	font-family: "Golos UI", sans-serif;
 	display: grid;
+	grid-template-areas:
+		"header aside"
+		". aside"
+		"footer aside";
 	grid-template-columns: 1fr $height_bar;
+	grid-template-rows: $height_bar 1fr calc(#{$height_bar}/ 2);
+
 	overflow: hidden;
 }
 
@@ -30,6 +36,7 @@ header {
 	height: $height_bar;
 	border-bottom: 2px solid $dark003;
 	padding: 8px 0;
+	grid-area: header;
 
 	.logo {
 		display: flex;
@@ -103,6 +110,7 @@ aside {
 	flex-direction: column;
 	width: 100%;
 	height: 100vh;
+	grid-area: aside;
 
 	svg {
 		path {
@@ -197,6 +205,35 @@ aside {
 				background-color: $secondary007;
 				border-radius: 50%;
 				cursor: pointer;
+			}
+		}
+	}
+}
+
+footer {
+	height: calc(#{$height_bar}/ 2);
+	background-color: $light003;
+	grid-area: footer;
+	display: flex;
+	justify-content: flex-end;
+	padding: 6px 0;
+
+	.copyright {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 120%;
+		color: $dark001;
+		display: flex;
+		position: relative;
+		padding-right: 16px;
+
+		span {
+			&:first-child {
+				border-right: 1px solid $light004;
+				padding-right: 8px;
+			}
+			&:last-child {
+				padding-left: 8px;
 			}
 		}
 	}
