@@ -1,5 +1,96 @@
+@import "fonts.scss";
 @import "variables.scss";
 
-body {
-	background-color: $primary;
+* {
+	box-sizing: border-box;
 }
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+body {
+	background-color: $light002;
+	font-family: "Golos UI", sans-serif;
+	display: grid;
+	grid-template-columns: 1fr $height_bar;
+}
+
+header {
+	background-color: $dark004;
+	color: $white;
+	display: flex;
+	height: $height_bar;
+	border-bottom: 2px solid $dark003;
+	padding: 8px 0;
+
+	.logo {
+		display: flex;
+		align-items: center;
+		width: 120px;
+		padding: 4px 24px 4px 16px;
+		box-sizing: content-box;
+		&__text {
+			margin-left: 7.5px;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+
+	.add {
+		background-color: $primary;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+
+		svg {
+			filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
+		}
+	}
+
+	.menu {
+		display: flex;
+		margin-left: 24px;
+		&__list {
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 0;
+		}
+
+		&__item {
+			display: block;
+			position: relative;
+
+			&-active {
+				&::after {
+					content: "";
+					position: absolute;
+					box-sizing: border-box;
+					top: calc(#{$height_bar} - 20px);
+					width: 100%;
+					left: 0;
+					bottom: 0;
+					border-bottom: 2px solid $primary;
+				}
+			}
+		}
+
+		&__link {
+			color: $white;
+			text-decoration: none;
+		}
+
+		&__dropdown {
+			margin-left: 16px;
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+// aside {
+// }
