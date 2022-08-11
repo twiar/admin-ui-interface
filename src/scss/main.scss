@@ -53,6 +53,7 @@ main {
 	}
 
 	&__item {
+		cursor: pointer;
 		display: flex;
 		gap: 8px;
 		align-items: center;
@@ -66,17 +67,29 @@ main {
 
 		&-title {
 			text-transform: uppercase;
+
+			&:hover {
+				color: $primary003;
+			}
 		}
 	}
 
 	&__text {
-		&-primary003 {
+		&-primary {
 			color: $primary003;
 		}
 	}
 
 	&__button {
 		padding: 0;
+		&:hover {
+			svg {
+				path {
+					fill: $primary003;
+				}
+			}
+		}
+
 		&-solid {
 			background-color: $primary003;
 			border-radius: 4px;
@@ -87,6 +100,33 @@ main {
 			line-height: 0;
 			font-weight: 700;
 			font-size: 14px;
+		}
+	}
+}
+
+.subbar {
+	display: none;
+	top: calc(#{$height_bar}* 2);
+	padding: 8px 16px;
+	z-index: 1;
+
+	.bar {
+		&__left {
+			padding: 0;
+		}
+		&__button {
+			padding: 12px;
+			font-size: 14px;
+			font-weight: 700;
+			border-radius: 4px;
+			color: $dark002;
+			text-transform: uppercase;
+			display: flex;
+			align-items: center;
+			&-solid {
+				line-height: 115%;
+				color: $white;
+			}
 		}
 	}
 }
@@ -205,6 +245,25 @@ main {
 		position: relative;
 		top: 2px;
 	}
+
+	.box__top {
+		.box__button {
+			width: 40px;
+			height: 40px;
+			border-radius: 4px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:hover {
+				background-color: $bg_primary;
+				svg {
+					path {
+						fill: $primary003;
+					}
+				}
+			}
+		}
+	}
 }
 
 .circle {
@@ -321,10 +380,10 @@ main {
 			}
 
 			&::after {
-				width: 12px;
-				height: 12px;
-				top: 3px;
-				left: 3px;
+				width: 14px;
+				height: 14px;
+				top: 2px;
+				left: 2px;
 			}
 		}
 	}
@@ -571,24 +630,6 @@ main {
 		gap: 16px;
 		align-items: center;
 		border-bottom: 1px solid $light004;
-		&-input {
-			height: 36px;
-			flex: 1;
-			padding: 0 0 0 36px;
-			border: none;
-			background: 8px 8px / 20px no-repeat url(/images/search.svg);
-			font-weight: 400;
-			font-size: 14px;
-			color: $dark003;
-
-			&::placeholder {
-				color: $dark001;
-			}
-
-			&:focus {
-				outline: none;
-			}
-		}
 	}
 
 	&__create {
@@ -598,11 +639,27 @@ main {
 		padding: 0;
 		border-bottom: 1px solid $primary001;
 	}
-	// &__container {
+}
 
-	// }
-	// &__list {
-	// }
+.search {
+	&__input {
+		height: 36px;
+		flex: 1;
+		padding: 0 0 0 36px;
+		border: none;
+		background: 8px 8px / 20px no-repeat url(/images/search.svg);
+		font-weight: 400;
+		font-size: 14px;
+		color: $dark003;
+
+		&::placeholder {
+			color: $dark001;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 .list {

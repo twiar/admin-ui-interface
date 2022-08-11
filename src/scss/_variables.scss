@@ -15,6 +15,7 @@ $secondary003: #673ab7;
 $secondary004: #ff3031;
 $secondary005: #e91e63;
 $secondary007: #ffb300;
+$bg_primary: #ecf6ff;
 $primary001: #3a9eff;
 $primary003: #1f8efa;
 $grad_sec001: linear-gradient(180deg, #eff3f6 0%, #dfe3e9 100%);
@@ -26,3 +27,7 @@ $orange: #fd8900;
 // Values
 $height_bar: 56px;
 $shadow_svg: drop-shadow(0 1px 0 rgba(28, 28, 28, 0.1));
+$shadow_4dp: 0px 7px 10px rgba(27, 36, 49, 0.15), 0px 3px 13px rgba(27, 36, 49, 0.05);
+$shadow_8dp: 0px 13px 20px rgba(27, 36, 49, 0.15), 0px 5px 27px rgba(27, 36, 49, 0.05);
+$shadow_16dp: drop-shadow(0px 28px 40px rgba(27, 36, 49, 0.15))
+	drop-shadow(0px 11px 53px rgba(27, 36, 49, 0.05));

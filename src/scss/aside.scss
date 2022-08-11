@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 aside {
-	background-color: $dark004;
+	background-color: $dark003;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -15,6 +15,7 @@ aside {
 	}
 
 	.avatar {
+		cursor: pointer;
 		width: $height_bar;
 		height: $height_bar;
 		display: flex;
@@ -73,6 +74,23 @@ aside {
 			&::after {
 				border-bottom: none;
 			}
+		}
+
+		&:hover {
+			background-color: $dark004;
+			svg {
+				path {
+					fill: $primary003;
+				}
+			}
+
+			&::after {
+				border-bottom: none;
+			}
+		}
+
+		.aside-menu__item:hover::after {
+			border-bottom: none;
 		}
 	}
 }
