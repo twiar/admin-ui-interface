@@ -1,0 +1,77 @@
+@import "variables.scss";
+
+header {
+	background-color: $dark004;
+	color: $white;
+	display: flex;
+	height: $height_bar;
+	border-bottom: 2px solid $dark003;
+	padding: 8px 0;
+	grid-area: header;
+
+	.logo {
+		display: flex;
+		align-items: center;
+		width: 120px;
+		padding: 4px 24px 4px 16px;
+		box-sizing: content-box;
+		&__text {
+			margin-left: 7.5px;
+			font-size: 18px;
+			font-weight: 500;
+		}
+	}
+
+	.add {
+		background-color: $primary003;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+
+		svg {
+			filter: $shadow_svg;
+		}
+	}
+
+	.menu {
+		display: flex;
+		margin-left: 24px;
+		&__list {
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 0;
+		}
+
+		&__item {
+			display: block;
+			position: relative;
+
+			&-active {
+				&::after {
+					content: "";
+					position: absolute;
+					box-sizing: border-box;
+					top: calc(#{$height_bar} - 20px);
+					width: 100%;
+					left: 0;
+					bottom: 0;
+					border-bottom: 2px solid $primary003;
+				}
+			}
+		}
+
+		&__link {
+			color: $white;
+			text-decoration: none;
+			padding: 0 4px;
+		}
+
+		&__dropdown {
+			margin-left: 16px;
+			display: flex;
+			align-items: center;
+		}
+	}
+}
